@@ -79,10 +79,31 @@
 - 总结:
   - 选项较少, 或者条件表达式是范围时用 if else, 否则用 switch 效率更高点
 
-### 循环结构
+### 循环结构 Loop
 循环的目的: 帮助我们解决**重复执行代码**的问题.
 1. for
   - 经典练习
 
 2. while
 3. do while
+
+### 函数 function
+
+1. 函数不调用不执行, skip
+2. ' function() ' 内置 " arguments " 用来存储不知数量和类型的实参.
+
+  - arguments 是伪数组,可遍历获取到所有实参.
+
+    - 有 'length'属性; 
+    - index 从 0 开始;
+    - 'arguments[0]' 获取到第一个实参;
+  
+3. 函数表达式
+
+  ```JS
+  // fun 是变量名, 用变量存储一个函数
+  var fun = function(args){}
+  // 调用: 
+  fun();
+  ```
+
