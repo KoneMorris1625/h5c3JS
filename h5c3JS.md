@@ -166,3 +166,52 @@ preparse: var  function
 > 1. 字符串拼接
 > 2. 月: 0 - 11 月
 > 3. 星期: 0 - 6 day
+
+##### 毫秒
+
+**case01**: timestamp    #TODO#
+**case02**: countdown
+[text](https://link)
+
+```JavaScript
+ // 倒计时效果 
+ // 1.核心算法:输入的时间减去现在的时间就是剩余的时间，即倒计时，但是不能拿着时分秒相减，比如 05分减去25分，结果会是负数的。
+ // 2.用时间戳来做。用户输入时间总的毫秒数减去现在时间的总的毫秒数，得到的就是剩余时间的毫秒数。 
+
+ // 3.把剩余时间总的毫秒数转换为天、时、分、秒(时间戳转换为时分秒)
+ // 转换公式如下: // 秒数 = 毫秒数 * 1000;
+ // d=parseInt(总秒数/60/60/24); // 计算天数 
+ // h=parseInt(总秒数/60/60%24) // 计算小时 
+ // m=parseInt(总秒数/60 %60); 计算分数 
+ // s=parseInt(总秒数%60); // 计算当前秒数 
+```
+
+#### Array 对象
+
+1. `arr instanceof Array`  &  `Array.isArray(arr)`
+
+2. `push()` & `unshift()`
+
+3. `pop()` & `shift()`
+
+4. `reverse()` & `sort()`
+
+```JavaScript
+arr.sort(function(a, b) { //升序排序
+  return a - b;
+});
+```
+
+1. `indexOf()` &  & 
+
+**case** 手写一个数组去重 `unique()`
+
+6. `toString()` & `join()`
+
+7. `splice()`
+
+#### String 对象
+
+1. `indexOf()`
+  **case**: 字符串某个字符出现次数和位置
+2. `charAt()`
