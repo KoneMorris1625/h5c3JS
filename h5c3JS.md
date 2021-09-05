@@ -170,8 +170,7 @@ preparse: var  function
 ##### 毫秒
 
 **case01**: timestamp    #TODO#
-**case02**: countdown
-[text](https://link)
+**case02**: [倒计时 `countdown()` ](./html/dateArrayString.html/#countdown)
 
 ```JavaScript
  // 倒计时效果 
@@ -202,16 +201,17 @@ arr.sort(function(a, b) { //升序排序
 });
 ```
 
-1. `indexOf()` &  & 
-
-**case** 手写一个数组去重 `unique()`
+5. `indexOf()` &  & 
+  **case**: [手写一个数组去重 unique()](./html/dateArrayString.html/#unique)
 
 6. `toString()` & `join()`
+
+  + 数组转字符串.
 
 7. `splice()`
 
 #### String 对象
 
 1. `indexOf()`
-  **case**: 字符串某个字符出现次数和位置
+  **case**:   [字符串某个字符出现次数和位置](./html/dateArrayString.html)
 2. `charAt()`
