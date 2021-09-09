@@ -1,98 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dateArrayString</title>
-  </head>
 
-  <body>
-    <!-- ------------formatDates------------ -->
-    <a id="countdown"></a>
-    <script>
-      function formatDates(items) {
-        return items < 0 ? "0" + items : items;
-      }
-      function countDown(futureTime) {
-        var futureTime = +new Date(futureTime);
-        // 1.
-        var midTime = futureTime - +new Date();
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dateArrayString</title>
+</head>
 
-        var days = parseInt(midTime / 1000 / 60 / 60 / 24);
-        days = formatDates(days);
-        var hours = parseInt((midTime / 1000 / 60 / 60) % 24);
-        hours = formatDates(hours);
-        var minutes = parseInt((midTime / 1000 / 60) % 60);
-        minutes = formatDates(minutes);
-        var seconds = formatDates(parseInt((midTime / 1000) % 60));
+<body>
+  <a id="countdown"></a>
+  <script>
+    // 静态倒计时效果   00天00时00分00秒
+    // 倒计时效果
+    // 1.核心算法:输入的时间减去现在的时间就是剩余的时间，即倒计时，但是不能拿着时分秒相减，比如 05分减去25分，结果会是负数的。
+    // 2.用时间戳来做。用户输入时间总的毫秒数减去现在时间的总的毫秒数，得到的就是剩余时间的毫秒数。
+    // 3.把剩余时间总的毫秒数转换为天、时、分、秒(时间戳转换为时分秒)
+    // 转换公式如下:
+    // d=parseInt(总秒数/60/60/24); // 计算天数
+    // h=parseInt(总秒数/60/60%24) // 计算小时
+    // m=parseInt(总秒数/60 %60); 计算分数
+    // s=parseInt(总秒数%60); // 计算当前秒数
+    function formatDates(items) {
+      return items < 0 ? "0" + items : items;
+    }
+    function countDown(futureTime) {
+      var futureTime = +new Date(futureTime);
+      // 1.
+      var midTime = futureTime - +new Date();
 
-        console.log(
-          "距离现在: " +
-            days +
-            "天" +
-            hours +
-            "时" +
-            minutes +
-            "分" +
-            seconds +
-            "秒"
-        );
-      }
-      countDown("Thursday September 03, 2222 21:42:33 ");
-    </script>
+      var days = parseInt(midTime / 1000 / 60 / 60 / 24);
+      days = formatDates(days);
+      var hours = parseInt((midTime / 1000 / 60 / 60) % 24);
+      hours = formatDates(hours);
+      var minutes = parseInt((midTime / 1000 / 60) % 60);
+      minutes = formatDates(minutes);
+      var seconds = formatDates(parseInt((midTime / 1000) % 60));
 
-    <a id="unique"></a>
-    <script>
-      var arr = [
-        "banana",
-        "apple",
-        "peach",
-        "apple",
-        "apple",
-        "apple",
-        "apple",
-        "orange",
-      ];
-      var neArr = [];
-      // 1. 遍历久数组, 获取到每一个数组中的值
-      // 2. newArr.indexOf(arr[i])===0, 即用 `indexOf`去查新数组中有没有被检测数组的元素, 没有就添加进去,
-      // 3. 最后返回去重后的新数组
-      // while ()
-      function unique(arr) {
-        var newArr = [];
-        for (var i = 0; i < arr.length; i++) {
-          //去查新数组中有没有被查数组中的元素.
-          if (newArr.indexOf(arr[i]) === -1) {
-            newArr.push(arr[i]);
-          }
+      console.log(
+        "距离现在: " +
+        days +
+        "天" +
+        hours +
+        "时" +
+        minutes +
+        "分" +
+        seconds +
+        "秒"
+      );
+    }
+    countDown("Thursday September 03, 2222 21:42:33 ");
+  </script>
+
+  <a id="unique"></a>
+  <script>
+    var arr = [
+      "banana",
+      "apple",
+      "peach",
+      "apple",
+      "apple",
+      "apple",
+      "apple",
+      "orange",
+    ];
+    var neArr = [];
+    // 1. 遍历久数组, 获取到每一个数组中的值
+    // 2. newArr.indexOf(arr[i])===0, 即用 `indexOf`去查新数组中有没有被检测数组的元素, 没有就添加进去,
+    // 3. 最后返回去重后的新数组
+    // while ()
+    function unique(arr) {
+      var newArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        //去查新数组中有没有被查数组中的元素.
+        if (newArr.indexOf(arr[i]) === -1) {
+          newArr.push(arr[i]);
         }
-        return newArr;
       }
-      console.log(arr.indexOf("bbb"));
-      console.log(unique(arr));
-    </script>
-    <script>
-      // -----------------indexTwoArgs()----------------
-      var char = prompt("search which?");
-      var strs = "jkfajsdf";
-      function indexTwoArgs(strs, char) {
-        // 查一次第一个, 一个都没有直接返回;
-        var index = strs.indexOf(char);
-        var num = 0;
-        if (index === -1) {
-          console.log("Not exist");
-          return -1;
-        }
-        // 查到一个了，就请继续查。
-        while (index !== -1) {
-          console.log("查到的字符位于：" + index + "处。");
-          num++;
-          index = strs.indexOf(char, index + 1);
-        }
-        console.log("what u want search display " + num + " times.");
+      return newArr;
+    }
+    console.log(arr.indexOf("bbb"));
+    console.log(unique(arr));
+  </script>
+  <script>
+    // -----------------indexTwoArgs()----------------
+    var char = prompt('search which?');
+    var strs = 'jkfajsdf';
+    function indexTwoArgs(strs, char) {
+      // 查一次第一个, 一个都没有直接返回;
+      var index = strs.indexOf(char);
+      var num = 0;
+      if (index === -1) {
+        console.log('Not exist');
+        return -1;
       }
-      indexTwoArgs(strs, char);
-    </script>
-  </body>
+      // 查到一个了，就请继续查。
+      while (index !== -1) {
+        console.log('查到的字符位于：' + index + '处。')
+        num++;
+        index = strs.indexOf(char, index + 1);
+
+      }
+      console.log('what u want search display ' + num + ' times.');
+    }
+    indexTwoArgs(strs, char);
+  </script>
+</body>
+
 </html>
