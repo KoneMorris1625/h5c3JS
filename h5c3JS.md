@@ -8,33 +8,34 @@
 
 ## 布局
 
-- 标准流
-- 浮动
-- 定位
+* 标准流
+* 浮动
+* 定位
 
 ---
 
-- 流式布局
-  - 携程 H5
-- flex 布局
-  - 京东 H5
-- rem 布局
-  - 苏宁 H5
-- 响应式布局
-  - sumsing
-  - apple
-
+* 流式布局
+  + 携程 H5
+* flex 布局
+  + 京东 H5
+* rem 布局
+  + 苏宁 H5
+* 响应式布局
+  + sumsing
+  + apple
 # JS
 
 ## 1. 变量 (variable)
 
-- 相当于一个保存数据的容器.
-- 变量初始化是指**声明变量同时给变量赋值**
+* 相当于一个保存数据的容器.
+* 变量初始化是指**声明变量同时给变量赋值**
+
+### 变量声明
 
 ### Boolean 与 0 的转换
 
-- String Number Boolean NaN underfined Null
-- //! TODO
+* String Number Boolean NaN underfined Null
+* //! TODO
 
 #### Boolean
 
@@ -78,14 +79,14 @@
 
 区别:
 
-- 语法
-  - if 里的条件表达式一般是表示范围的大于, 小于或者等于,
-  - 而 switch 则是确定的值
-- 执行顺序
-  - if 是从上到下, 一个一个执行, 碰到能执行的才跳出, 执行效率较低
-  - switch 则是直接条件表达式的值和选项进行匹配, 不用从上到下挨个执行一遍条件判断.
-- 总结:
-  - 选项较少, 或者条件表达式是范围时用 if else, 否则用 switch 效率更高点
+* 语法
+  + if 里的条件表达式一般是表示范围的大于, 小于或者等于, 
+  + 而 switch 则是确定的值
+* 执行顺序
+  + if 是从上到下, 一个一个执行, 碰到能执行的才跳出, 执行效率较低
+  + switch 则是直接条件表达式的值和选项进行匹配, 不用从上到下挨个执行一遍条件判断.
+* 总结:
+  + 选项较少, 或者条件表达式是范围时用 if else, 否则用 switch 效率更高点
 
 ### 循环结构 Loop
 
@@ -93,7 +94,7 @@
 
 1. for
 
-- [forPractice](./forPractice.md).
+* [forPractice](./forPractice.md).
 
 2. while
 3. do while
@@ -103,10 +104,10 @@
 1. 函数不调用不执行, skip
 2. ' function() ' 内置 " arguments " 用来存储不知数量和类型的**所有实参**.
 
-- arguments 是伪数组, 可遍历获取到所有实参.
-  - 有 'length'属性;
-  - index 从 0 开始;
-  - 'arguments[0]' 获取到第一个实参;
+* arguments 是伪数组, 可遍历获取到所有实参.
+  + 有 'length'属性; 
+  + index 从 0 开始; 
+  + 'arguments[0]' 获取到第一个实参; 
 
 3. 函数表达式
 
@@ -119,19 +120,19 @@
 
 ## 5. 作用域
 
-- 局部
-- 全局
-  - 函数内未声明的直接赋值的变量也是全局变量
-- 作用域链
-  - -> 就近原则
+* 局部
+* 全局
+  + 函数内未声明的直接赋值的变量也是全局变量
+* 作用域链
+  + -> 就近原则
 
 ## 6. 预解析
 
 JS 引擎进行预解析 + 执行 js 代码
 preparse: var function
 
-- var: 所有变量提升到当前作用域最前面, 只声明不赋值;
-- function: 提升到当前作用域最前面, 不调用.
+* var: 所有变量提升到当前作用域最前面, 只声明不赋值; 
+* function: 提升到当前作用域最前面, 不调用.
 
 ```js
 function fun() {
@@ -155,7 +156,7 @@ function fun() {
 
 #### Math 对象
 
-`Math. Random()`
+ `Math. Random()`
 
 **case**: 获取指定范围的随机整数:
 
@@ -167,7 +168,7 @@ function fun() {
 
 #### Date 对象
 
-必须通过构造函数获取 `Date()` 对象;
+必须通过构造函数获取 `Date()` 对象; 
 **case**: 2021 年 9 月 1 日 22:23:07 星期三
 
 > 1. 字符串拼接
@@ -179,8 +180,8 @@ function fun() {
 **case01**: timestamp #TODO#
 **case02**: [倒计时 `countdown()` ](./html/dateArrayString.html/#countdown)
 
-> 倒计时效果 1.核心算法:输入的时间减去现在的时间就是剩余的时间，即倒计时，但是不能拿着时分秒相减，比如 05 分减去 25 分，结果会是负数的。 2.用时间戳来做。用户输入时间总的毫秒数减去现在时间的总的毫秒数，得到的就是剩余时间的毫秒数。 3.把剩余时间总的毫秒数转换为天、时、分、秒(时间戳转换为时分秒)
-> 转换公式如下: // 秒数 = 毫秒数 \* 1000;
+> 倒计时效果 1. 核心算法: 输入的时间减去现在的时间就是剩余的时间，即倒计时，但是不能拿着时分秒相减，比如 05 分减去 25 分，结果会是负数的。 2. 用时间戳来做。用户输入时间总的毫秒数减去现在时间的总的毫秒数，得到的就是剩余时间的毫秒数。 3. 把剩余时间总的毫秒数转换为天、时、分、秒(时间戳转换为时分秒)
+> 转换公式如下: // 秒数 = 毫秒数 \* 1000; 
 > d=parseInt(总秒数/60/60/24); // 计算天数
 > h=parseInt(总秒数/60/60%24) // 计算小时
 > m=parseInt(总秒数/60 %60); 计算分数
@@ -207,20 +208,20 @@ arr.sort(function(a, b) { //升序排序
 
 6. `toString()` & `join()`
 
-- 数组转字符串.
+* 数组转字符串.
 
 7. `splice()`
 
 #### String 对象
 
 1. `indexOf()`
-   **case**: [字符串某个字符出现次数和位置`indexTwoArgs()`](./html/dateArrayString.html)
+   **case**: [字符串某个字符出现次数和位置 `indexTwoArgs()` ](./html/dateArrayString.html)
 
 2. `charAt()`
-   **case**: [统计出现次数最多的字符`indexTwoArgs()`](./html/dateArrayString.html)
+   **case**: [统计出现次数最多的字符 `indexTwoArgs()` ](./html/dateArrayString.html)
    todo
 
-## 8.DOM
+## 8. DOM
 
 ### 8.1 ES 与 DOM 和 BOM 关系
 
@@ -250,17 +251,17 @@ DOM/BOM：实现网页交互, 是对 ES 的应用.
 **case**: 新浪下拉菜单
 方式: 利用节点层级关系获取各元素
 
-> 事件源和类型: 看不见的每个选项盒子`li`; `onmouseover`和`onmouseout` > `children[1]`的妙用: 第二个元素**节点**
+> 事件源和类型: 看不见的每个选项盒子 `li` ; `onmouseover` 和 `onmouseout` > `children[1]` 的妙用: 第二个元素**节点**
 
 **case**: 简易留言板
 需求:
-留言后, 向`ul`中添加子节点,增加删除链接,
+留言后, 向 `ul` 中添加子节点, 增加删除链接, 
 
 > 思路:
-> 事件源和类型: "发布" 按钮;
+> 事件源和类型: "发布" 按钮; 
 > 函数:
 >
-> 1. 点击后向`ul`中追加`li` ;
-> 2. `li.innerHtml = textarea.value`;
+> 1. 点击后向 `ul` 中追加 `li` ; 
+> 2. `li.innerHtml = textarea.value` ; 
 
 **case**: 动态列表, 节点的展示与删除

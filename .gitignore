@@ -1,5 +1,8 @@
-*.pdf
 
 algorithm.md
 
 algorithm/
+
+leetCodeProblem/
+
+leetCode*/
