@@ -1,10 +1,33 @@
 # h5
 
+`<i>` vs. `<em>`
+
+* `<em>` 强调语义
+* `<i>` 无强调语义, 表特指, 特殊
 # c3
 
 ## 选择器
 
 ## 属性
+
+### 文本
+
+#### font 属性
+
+```css
+  font: normal 400 16px/1.5 MicrosoftYahei;
+  font: font-style font-weight font-size/line-height font-family;
+```
+
+#### 文本属性
+
+```css
+  color: #ffffff;
+  text-align: middle;
+  text-indent: 2em;
+  text-decoration: none;
+  line-height: 16px;
+```
 
 ## 布局
 
@@ -65,15 +88,15 @@
 
 ```js
     switch (条件表达式[值]) {
-      case 值1:
-        xxxxxxx;
-        break;
-      case 值2:
-        xxxxxxx;
-        break;
-        ...
-      default
-      // * TODO
+        case 值1:
+            xxxxxxx;
+            break;
+        case 值2:
+            xxxxxxx;
+            break;
+            ...
+        default
+        // * TODO
     }
 ```
 
@@ -136,11 +159,11 @@ preparse: var function
 
 ```js
 function fun() {
-  var a = (b = c = 9);
-  // 预解析为:
-  // var a;
-  // a = 9; b = 9; c = 9;
-  // b 和 c 即是 全局变量.
+    var a = (b = c = 9);
+    // 预解析为:
+    // var a;
+    // a = 9; b = 9; c = 9;
+    // b 和 c 即是 全局变量.
 }
 ```
 
@@ -162,7 +185,7 @@ function fun() {
 
 ```JavaScript
   function getRandom(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+      return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 ```
 
@@ -199,7 +222,7 @@ function fun() {
 
 ```JavaScript
 arr.sort(function(a, b) { //升序排序
-  return a - b;
+    return a - b;
 });
 ```
 
