@@ -6,20 +6,44 @@
 * `<i>` 无强调语义, 表特指, 特殊
 # c3
 
+## 三大特性: 
+
+### 层叠性
+
+> 距离文档最近(文档流的下面) 覆盖前面的样式
+
+### 继承性
+
+> 子级标签继承父级的文字类型的属性, 譬如: font / text / line- / color 等
+
+#### 行高的继承
+
+[font](#line-height)
+
+### 优先级
+
+继承|标签|类/伪类|id| `!important` |
+-----|-----|-----|-----|-----
+0|0001|0010|0100|infinite
+
 ## 选择器
+
+标签 - 类 - id - 复合
 
 ## 属性
 
 ### 文本
 
-#### font 属性
+<i id='line-height'></i>
+
+#### 字体属性 font
 
 ```css
   font: normal 400 16px/1.5 MicrosoftYahei;
   font: font-style font-weight font-size/line-height font-family;
 ```
 
-#### 文本属性
+#### 文本属性 text
 
 ```css
   color: #ffffff;
@@ -27,6 +51,37 @@
   text-indent: 2em;
   text-decoration: none;
   line-height: 16px;
+```
+
+### 图片
+
+#### 背景属性 background
+
+```css
+/* default */
+background-color: transparent;
+/* ---------image--------- */
+/* 路径不要加引号 */
+background-image: url();
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: x y;
+
+/* 简写:  */
+background: pink url() no-repeat fixed 50px 60px;
+background: rgba(255, 255, 255, 0.5);
+```
+
+### 表格 盒子 
+
+#### 边框属性 border
+
+```css
+/* 缩写 */
+border : border-width || border-style || border-color;
+border: 1px solid #ffffff
+/* 表格细线边框: 合并表格 <td> 上下重叠的边框 */
+border-collapse: collapse;
 ```
 
 ## 布局
