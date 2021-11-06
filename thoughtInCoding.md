@@ -1,4 +1,16 @@
 # Thougt In Coding
+- [Thougt In Coding](#thougt-in-coding)
+  - [learning Method](#learning-method)
+    - [API 学习和运用](#api-学习和运用)
+  - [art of programming](#art-of-programming)
+    - [counter](#counter)
+    - [container](#container)
+    - [index](#index)
+    - [flag](#flag)
+      - [开关灯](#开关灯)
+    - [exclusive thought 排他](#exclusive-thought-排他)
+    - [compatibility encapsulation function](#compatibility-encapsulation-function)
+    - [循环不变量](#循环不变量)
 
 ## learning Method
 
@@ -23,13 +35,13 @@
 ```js
 // 伪代码
 if (flag === 0) {
-  // 执行函数体
-  // 最后声明当前灯的开关状态: 已经开过了
-  flag = 1;
+    // 执行函数体
+    // 最后声明当前灯的开关状态: 已经开过了
+    flag = 1;
 } else {
-  // 执行函数体
-  // 最后声明当前灯的开关状态: 关了
-  flag = 0;
+    // 执行函数体
+    // 最后声明当前灯的开关状态: 关了
+    flag = 0;
 }
 ```
 
@@ -44,8 +56,8 @@ if (flag === 0) {
 
 ### 循环不变量
 
-- 循环中维护了一个循环不变量, 维护了一种声明, target 始终保持在 [l, r] 区间中
-- 快排, 堆, 图
-- 关注**如何控制边界来保证循环不变量**
+* 循环中维护了一个循环不变量, 维护了一种声明, target 始终保持在 [l, r] 区间中
+* 快排, 堆, 图
+* 关注**如何控制边界来保证循环不变量**
 
 e.g.[binarySearch](./html/algorithm/binarySlimit.html), [forwhile.html](./html/algorithm/forwhile.html)
