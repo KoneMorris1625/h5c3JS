@@ -2,7 +2,9 @@
 - [Thougt In Coding](#thougt-in-coding)
   - [learning Method](#learning-method)
     - [API 学习和运用](#api-学习和运用)
+    - [原型图的落地, 需求转换成代码](#原型图的落地-需求转换成代码)
   - [art of programming](#art-of-programming)
+    - [Constructor Initialization](#constructor-initialization)
     - [counter](#counter)
     - [container](#container)
     - [index](#index)
@@ -20,7 +22,18 @@
 2. args 的类型和数量
 3. return 的类型, 数量, **能有哪些妙用, 即 case**
 
+### 原型图的落地, 需求转换成代码
+
+* **布局分析**
+* **功能分析**
+  + 事件三要素: 源, 类型, 函数
+  + 业务?: CRUD
+* 对象抽取
+  + 对象内属性及`方法-->对应的功能实现`
+
 ## art of programming
+
+### Constructor Initialization
 
 ### counter
 
@@ -59,5 +72,3 @@ if (flag === 0) {
 * 循环中维护了一个循环不变量, 维护了一种声明, target 始终保持在 [l, r] 区间中
 * 快排, 堆, 图
 * 关注**如何控制边界来保证循环不变量**
-
-e.g.[binarySearch](./html/algorithm/binarySlimit.html), [forwhile.html](./html/algorithm/forwhile.html)
