@@ -4,12 +4,11 @@ let that = null;
  */
 class Tab {
 	/**
-	 * 获取数据
-	 * @param {string} id
+	 * 获取数据, 不变的, 框架性的元素
+	 * @param {string} id "#tab"
 	 */
 	constructor(id) {
 		that = this;
-		// 获取不变的, 框架性的元素
 		this.main = document.querySelector(id); //缩小 document 范围
 		// this.fsection = this.main.querySelector(".tabscon section")
 		this.addButten = this.main.querySelector(".tabadd");
@@ -27,6 +26,10 @@ class Tab {
 		this.sections = this.main.querySelectorAll("section");
 		// 字体图标也能被选择器获取到.~
 		this.delelteSymbols = this.main.querySelectorAll(".icon-guanbi");
+		this.spans = this.main.querySelectorAll(
+			".fisrstnav li span:first-child"
+		);
+		console.log(this.spans);
 	}
 	/**
 	 * exclusive idea
@@ -51,6 +54,8 @@ class Tab {
 			this.lis[i].addEventListener("click", this.tabToggle);
 			// this.lis[i].onclick = this.tabToggle;
 			this.delelteSymbols[i].addEventListener("click", this.removeTab);
+			this.spans[i].addEventListener("dblclick", this.editTab);
+			this.sections[i].addEventListener("dblclick", this.editTab);
 		}
 	}
 
@@ -67,9 +72,11 @@ class Tab {
 	 */
 	addTab() {
 		that.clearClass();
-		let random = Math.random();
+		let random = Math.floor(Math.random() * 10);
 		let li =
-				'<li class="liactive"><span>New Tab</span><span class="iconfont icon-guanbi"></span></li>',
+				'<li class="liactive"><span>New Tab_' +
+				random +
+				'</span><span class="iconfont icon-guanbi"></span></li>',
 			section = '<section class="conactive">测试' + random + "</section>";
 		that.ul.insertAdjacentHTML("beforeend", li);
 		that.fsection.insertAdjacentHTML("beforeend", section);
@@ -77,13 +84,44 @@ class Tab {
 		that.init();
 		// //todo 新增更多的选项卡, 样式无改变, 导致塌方.
 	}
-
+	/**
+	 *	function that remove tabs.
+	 * @param {object} e event object
+	 * @returns void
+	 */
 	removeTab(e) {
+		// 防止触发点击事件的冒泡, 父元素 li 有点击选中事件.
 		e.stopPropagation();
 		//** get index whose li & section should be removed */
 		let index = this.parentNode.index;
-		console.log(index);
+
+		that.lis[index].remove();
+		that.sections[index].remove();
+		// 逻辑优化: 1. has selected: return
+		if (that.main.querySelector(".liactive")) return;
+		// 2. is selected: click previous tab
+		that.lis[--index] && that.lis[--index].click();
 	}
-	editableTab() {}
+	editTab(e) {
+		window.getSelection
+			? window.getSelection().removeAllRanges()
+			: document.selection.empty();
+		let str = this.innerHTML;
+		this.innerHTML = "<input type = 'text' />";
+		// let inputText = this.querySelector("input")
+		let inputText = this.children[0];
+		inputText.value = str;
+		inputText.select();
+
+		inputText.onblur = function () {
+			this.parentNode.innerHTML = inputText.value;
+		};
+		inputText.onkeyup = function (e) {
+			// enter = 13
+			if (e.keyCode === 13) {
+				this.blur();
+			}
+		};
+	}
 }
 new Tab("#tab");
